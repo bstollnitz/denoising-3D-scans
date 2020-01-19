@@ -15,6 +15,9 @@ spatial data.
 
 You can find more details in the <a href="https://1drv.ms/b/s!AiCY1Uw6PbEfhdxWL0lSvCZrnEAEBA?e=Gcdrud">report</a> for this project.
 
+This was a homework assignment for the Computational Methods for Data Analysis class (AMATH 582) at the University of Washington, which I completed as part 
+of my masters in Applied Mathematics.
+
 ## Running
 
 To run this project:
