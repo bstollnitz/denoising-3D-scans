@@ -42,7 +42,7 @@ def load_data() -> np.ndarray:
     data_file_path = os.path.join(data_dir_path, "Testdata.mat")
     if not os.path.exists(data_file_path):
         print("Downloading data file...")
-        data_url = "https://bea-portfolio.s3-us-west-2.amazonaws.com/Testdata.mat"
+        data_url = "https://bea-portfolio.s3-us-west-2.amazonaws.com/denoising-3D-scans/Testdata.mat"
         with urlopen(data_url) as response:
             with open(data_file_path, "wb") as data_file:
                 shutil.copyfileobj(response, data_file)
