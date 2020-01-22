@@ -1,7 +1,7 @@
 # Denoising 3D scanned data
 
 *Technologies:* Python, NumPy, Plotly. <br>
-*Topics:* time-series, FFT, denoising by filtering. <br>
+*Topics:* time-series, Fourier transform, denoising by filtering. <br>
 
 ## Description
 
