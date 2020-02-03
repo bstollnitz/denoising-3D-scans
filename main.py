@@ -316,17 +316,17 @@ def plot_fft_isosurfaces(description: str, omega: np.ndarray,
             row=1,
             col=s+1
         )
-        fig.update_layout(
-            scene_xaxis_title_text="omega_x",
-            scene_yaxis_title_text="omega_y",
-            scene_zaxis_title_text="omega_z",
-            scene2_xaxis_title_text="omega_x",
-            scene2_yaxis_title_text="omega_y",
-            scene2_zaxis_title_text="omega_z",
-            scene3_xaxis_title_text="omega_x",
-            scene3_yaxis_title_text="omega_y",
-            scene3_zaxis_title_text="omega_z",
-        )
+    fig.update_layout(
+        scene_xaxis_title_text="omega_x",
+        scene_yaxis_title_text="omega_y",
+        scene_zaxis_title_text="omega_z",
+        scene2_xaxis_title_text="omega_x",
+        scene2_yaxis_title_text="omega_y",
+        scene2_zaxis_title_text="omega_z",
+        scene3_xaxis_title_text="omega_x",
+        scene3_yaxis_title_text="omega_y",
+        scene3_zaxis_title_text="omega_z",
+    )
     pio.write_html(fig, filename)
 
 
@@ -373,13 +373,16 @@ def plot_marble_path(title: str, marble_path: np.ndarray,
     pio.write_html(fig, filename)
 
 
-def print_last_marble_position(marble_path) -> None:
+def print_marble_position(marble_path) -> None:
     """
-    Prints the 3D coordinate of the marble at the last time slice.
+    Prints the 3D coordinates of the marble.
     """
 
-    (x, y, z) = marble_path[-1,:]
-    print(f"Postion of marble at 20th data measurement: {x}, {y}, {z}")
+    num_slices = marble_path.shape[0]
+    slices = [0, num_slices//2, num_slices-1]
+    for slice in slices:
+        (x, y, z) = marble_path[slice,:]
+        print(f"Position of marble at time {slice}: {x}, {y}, {z}")
 
 
 def main() -> None:
@@ -413,7 +416,7 @@ def main() -> None:
     marble_path = get_marble_path(u_denoised, domain_values)
     plot_marble_path('Marble path', marble_path,
         os.path.join(plots_dir_path, '6_marble_path.html'))
-    print_last_marble_position(marble_path)
+    print_marble_position(marble_path)
 
 
 if __name__ == '__main__':
