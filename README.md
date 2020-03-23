@@ -1,11 +1,11 @@
 # Denoising 3D scanned data
 
 *Technologies:* Python, NumPy, Plotly. <br>
-*Topics:* time-series, Fourier transform, denoising by filtering. <br>
+*Topics:* fast Fourier transform (FFT), time-series. <br>
 
 ## Description
 
-<img src="readme_files/marble-path.png?raw=true" width="350"/>
+<img src="https://github.com/bstollnitz/denoising-3D-scans/blob/master/readme_files/marble-path.png?raw=true" width="350"/>
 
 In this project, I denoise a series of three-dimensional scanned data to determine the path of a marble ingested by a dog.
 I accomplish this by converting the data into the frequency domain using an FFT, averaging the spectra over time, and using
@@ -22,8 +22,16 @@ of my masters in Applied Mathematics.
 
 To run this project:
 
+(Windows)
 ```sh
-conda env create -f environment.yml
+conda env create -f environment_win.yml
+conda activate denoising-3D-scans
+python main.py
+```
+
+(Mac)
+```sh
+conda env create -f environment_mac.yml
 conda activate denoising-3D-scans
 python main.py
 ```
